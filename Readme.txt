@@ -1,5 +1,4 @@
 
----
 
 # 🚲 Bike Rental Demand Predictor
 
@@ -170,7 +169,7 @@ streamlit run app.py
 * GitHub: [github.com/siddhant754962](https://github.com/siddhant754962)
 * Email: [kumarsidhant144@gmail.com](mailto:kumarsidhant144@gmail.com)
 
----
+
 
 
 
