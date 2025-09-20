@@ -188,7 +188,7 @@ with st.sidebar:
     st.markdown("---")
     st.info("💡 **Tip:** Use the 'What-If Analysis' tab to explore how changes in weather impact rental predictions!")
     st.markdown("---")
-    st.markdown("Developed with ❤️ by siddhant ")
+    st.markdown("Developed with ❤️ using Streamlit")
 
 
 # ==============================
@@ -219,9 +219,10 @@ with tab1:
                 with st.spinner("Fetching live weather data..."):
                     weather_data = get_live_weather(city, api_key)
                     if weather_data:
-                        st.session_state.temp = weather_data['temp']
-                        st.session_state.hum = weather_data['hum']
-                        st.session_state.windspeed = weather_data['windspeed']
+                        # FIX: Convert all API values to float to match the sliders
+                        st.session_state.temp = float(weather_data['temp'])
+                        st.session_state.hum = float(weather_data['hum'])
+                        st.session_state.windspeed = float(weather_data['windspeed'])
                         
                         api_condition = weather_data['weathersit_main']
                         if api_condition in ["Rain", "Drizzle", "Snow", "Thunderstorm"]:
